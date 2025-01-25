@@ -1,11 +1,19 @@
 import javax.swing.Timer;
 import java.util.ArrayDeque;
 import java.util.Queue;
-
+/**
+ * A class that implements the interface SortingAlgorithm to use quick sort in ascending order
+ * @author Mason Allison
+ */
 public class QuickSortForward implements SortingAlgorithm {
     private Queue<int[]> tasks = new ArrayDeque<>();
 
     @Override
+    /**
+     * Sorts the graph with quick sort in ascending order
+     * @param array An array of integers
+     * @param repaint A task that can be executed concurrently
+     */
     public void sort(int[] array, Runnable repaint) {
         tasks.offer(new int[]{0, array.length-1});
         AlgorithmVisualizer.timer = new Timer(100, e -> {
@@ -27,7 +35,13 @@ public class QuickSortForward implements SortingAlgorithm {
         AlgorithmVisualizer.timer.start();
         
     }
-    
+    /**
+     * Finds the partition of an array
+     * @param array An array of integers
+     * @param start The first index in the array
+     * @param end The last index in the array
+     * @return The integer that represents the partition of the array
+     */
     private int partitionForward(int[] array, int start, int end) {
         int pivot = array[end];
         int i=start;

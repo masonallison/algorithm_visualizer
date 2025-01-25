@@ -1,6 +1,15 @@
 import javax.swing.Timer;
-
+/**
+ * A class that implements the interface SortingAlgorithm to use insertion sort in ascending order
+ * @author Mason Allison
+ */
 public class InsertionSortForward implements SortingAlgorithm {
+    /**
+     * Sorts the graph with ascending insertion sort
+     * @param array An array of integers
+     * @param repaint A task that can be executed concurrently
+     */
+    @Override
     public void sort(int[] array, Runnable repaint) {
         AlgorithmVisualizer.timer = new Timer(100, e -> {
         boolean swapped = false;
