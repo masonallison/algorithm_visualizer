@@ -161,7 +161,7 @@ public class AlgorithmVisualizer extends JPanel {
      */
     public void insertionSortForward() {
         stopSorting();
-        sortingAlgorithm = new InsertionSortBackward();
+        sortingAlgorithm = new InsertionSortForward();
         sortingAlgorithm.sort(heights, this::repaint);
     }
     /**
